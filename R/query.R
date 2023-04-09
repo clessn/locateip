@@ -7,11 +7,19 @@
 #' @return A request.
 #' @export
 #' @examples
-get_address <- function(ip = NULL) {
+get_address <- function(ip = NULL, fields = c("status","message","query","country","city"), ..., format = "csv") {
+
+  params <- list(
+    action = "query",
+    ...
+  )
+
+  names(params) <- paste0(names(params))
+
 
   httr2::request("http://ip-api.com") %>%
-    httr2::req_url_path_append("csv") %>%
-    httr2::req_url_query(ip = ip) %>%
+    httr2::req_url_path_append(format) %>%
+    httr2::req_url_query(!!!params) %>%
     httr2::req_user_agent("ipadress (https://github.com/clessn; info@clessn.ca)") %>%
       httr2::req_throttle(45 / 60) %>%
       httr2::req_perform()
@@ -21,4 +29,4 @@ get_address <- function(ip = NULL) {
 test <- get_address(ip = "24.48.0.1")
 
 test %>%
-  httr2::resp_body_json()
+  httr2::resp_body_string()
