@@ -7,7 +7,7 @@
 #' @return A request.
 #' @export
 #' @examples
-get_address <- function(ip = NULL, fields = c("status","message","query","country","city"), ..., format = "csv") {
+get_address <- function(ip = NULL, fields = c("status","message","query","country","city"), header = "TRUE", ..., format = "csv") {
 
   params <- list(
     action = "query",
