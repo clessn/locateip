@@ -20,6 +20,6 @@ Locate an IP adress
 \examples{
 resp <- get_address("142.162.45.64")
 
-resp \%>\%
+resp |>
   httr2::resp_body_string()
 }
