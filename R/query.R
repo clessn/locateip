@@ -1,7 +1,6 @@
 #' Create request for IP API
 #'
 #' @param ip IP
-#' @param ... Extra parameters to add to the query.
 #' @return A request.
 #' @export
 #' @examples
