@@ -1,7 +1,5 @@
 #' Create request for IP API
 #'
-#' Internal function.
-#'
 #' @param ip IP
 #' @param ... Extra parameters to add to the query.
 #' @return A request.
