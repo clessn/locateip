@@ -1,4 +1,4 @@
-#' Create request for IP API
+#' Locate an IP adress
 #'
 #' @param ip A single IPv4/IPv6 address or a domain name. If you don't supply a query the current IP address will be used.
 #' @param format Json, xml, csv, newline or php.
