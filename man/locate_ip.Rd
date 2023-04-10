@@ -4,10 +4,14 @@
 \alias{locate_ip}
 \title{Locate an IP adress}
 \usage{
-locate_ip(ip)
+locate_ip(ip, fields = c("status,message,query,country,city"), ...)
 }
 \arguments{
 \item{ip}{A single IPv4/IPv6 address or a domain name. If you don't supply a query the current IP address will be used.}
+
+\item{fields}{Response fields to pass on to the API.}
+
+\item{...}{Query parameters to pass on to the API.}
 }
 \value{
 A string.

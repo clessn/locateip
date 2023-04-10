@@ -5,12 +5,13 @@
 #' For API documentation and terms of service, see [ip-api.com](https://ip-api.com/).
 #'
 #' @param ip A single IPv4/IPv6 address or a domain name. If you don't supply a query the current IP address will be used.
+#' @inheritParams get_location
 #' @return A string.
 #' @export
 #' @examples
 #' locate_ip("142.162.45.64")
-locate_ip <- function(ip) {
-  resp <- get_location(ip, format = "csv")
+locate_ip <- function(ip, fields = c("status,message,query,country,city"), ...) {
+  resp <- get_location(ip, fields = fields, ..., format = "csv")
 
   string <- resp |>
     httr2::resp_body_string()
