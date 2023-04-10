@@ -1,6 +1,6 @@
 Package: locateip
 Title: Locate IP addresses with ip-api
-Version: 0.0.0.9005
+Version: 0.0.0.9006
 Authors@R: 
     person("Judith", "Bourque", , "info@clessn.ca", role = c("aut", "cre"))
 Description: What the package does (one paragraph).
