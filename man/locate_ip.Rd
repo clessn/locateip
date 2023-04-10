@@ -15,7 +15,7 @@ locate_ip(ip, format = "csv")
 A response.
 }
 \description{
-Locate an IP adress
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
 }
 \examples{
 resp <- locate_ip("142.162.45.64")
