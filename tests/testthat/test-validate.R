@@ -21,7 +21,14 @@ test_that("validate ipv4 works", {
                TRUE)
 
   # Not valid
-
+  expect_equal(validate_ipv4("0.0.0"),
+               FALSE)
+  expect_equal(validate_ipv4("0"),
+               FALSE)
+  expect_equal(validate_ipv4(""),
+               FALSE)
+  expect_equal(validate_ipv4("NotAnIP"),
+               FALSE)
 })
 
 test_that("validate ip works", {
