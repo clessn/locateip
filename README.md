@@ -29,7 +29,10 @@ devtools::install_github("clessn/locateip")
 library(locateip)
 
 locate_ip("142.162.45.64", fields = c("status,message,country,city"))
-#> [1] "success,Canada,Fredericton\n"
+#> # A tibble: 1 × 4
+#>   status  message country city       
+#>   <chr>   <lgl>   <chr>   <chr>      
+#> 1 success NA      Canada  Fredericton
 ```
 
 ## Usage

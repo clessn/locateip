@@ -4,18 +4,25 @@
 #'
 #' For API documentation and terms of service, see [ip-api.com](https://ip-api.com/).
 #'
+#' @param tidy Logical. TRUE to return a tibble. FALSE to return a string.
 #' @inheritParams get_location
-#' @return A string.
+#' @return A string or a tibble.
 #' @export
 #' @examples
 #' locate_ip("142.162.45.64")
-locate_ip <- function(ip, fields = c("status,message,country,city"), ...) {
+locate_ip <- function(ip, fields = c("status,message,country,city"), ..., tidy = TRUE) {
   resp <- get_location(ip, fields = fields, ..., format = "csv")
 
   string <- resp |>
     httr2::resp_body_string()
 
-  return(string)
+  if (tidy) {
+    data <- tidy_location(response = string, fields = fields)
+
+    return(data)
+  } else {
+    return(string)
+  }
 }
 
 #' Get location
