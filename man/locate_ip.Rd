@@ -17,6 +17,9 @@ A response.
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
 }
+\details{
+For API documentation and terms of service, see \href{https://ip-api.com/}{ip-api.com}.
+}
 \examples{
 resp <- locate_ip("142.162.45.64")
 
