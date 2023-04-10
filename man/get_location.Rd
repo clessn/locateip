@@ -6,7 +6,7 @@
 \usage{
 get_location(
   ip,
-  fields = c("status,message,country,city,query"),
+  fields = c("status,message,country,city"),
   ...,
   format = "csv"
 )

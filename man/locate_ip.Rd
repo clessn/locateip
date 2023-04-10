@@ -4,7 +4,7 @@
 \alias{locate_ip}
 \title{Locate an IP adress}
 \usage{
-locate_ip(ip, fields = c("status,message,country,city,query"), ...)
+locate_ip(ip, fields = c("status,message,country,city"), ...)
 }
 \arguments{
 \item{ip}{A single IPv4/IPv6 address or a domain name. If you don't supply a query the current IP address will be used.}

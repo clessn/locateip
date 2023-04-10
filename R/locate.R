@@ -9,7 +9,7 @@
 #' @export
 #' @examples
 #' locate_ip("142.162.45.64")
-locate_ip <- function(ip, fields = c("status,message,country,city,query"), ...) {
+locate_ip <- function(ip, fields = c("status,message,country,city"), ...) {
   resp <- get_location(ip, fields = fields, ..., format = "csv")
 
   string <- resp |>
@@ -37,7 +37,7 @@ locate_ip <- function(ip, fields = c("status,message,country,city,query"), ...) 
 #'
 #' resp |>
 #'   httr2::resp_body_string()
-get_location <- function(ip, fields = c("status,message,country,city,query"), ..., format = "csv") {
+get_location <- function(ip, fields = c("status,message,country,city"), ..., format = "csv") {
   if (validate_ip(ip) == FALSE) {
     return(print("Pleade use a valid IP adress"))
   } else {
@@ -73,7 +73,7 @@ get_location <- function(ip, fields = c("status,message,country,city,query"), ..
 #' @export
 #' @examples
 #' ip <- "142.162.45.64"
-#' fields <- "status,message,country,city,query"
+#' fields <- "status,message,country,city"
 #'
 #' response <- get_location(ip, fields) |>
 #'    httr2::resp_body_string()
