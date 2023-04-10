@@ -21,3 +21,9 @@ locate_ip <- function(ip, format = "csv") {
       httr2::req_perform()
 
 }
+
+validate_ipv4 <- function(ip){
+  return(grepl("^((25[0-5]|(2[0-4]|1\\d|[1-9]|)\\d)\\.?\\b){4}$", ip))
+}
+
+#validate_ip("142.162.45.64")
