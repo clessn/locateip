@@ -32,7 +32,30 @@ locate_ip <- function(ip, fields = c("status,message,query,country,city"), ...) 
 #' @export
 tidy_location <- function(string, fields) {
 
+  ip <- "142.162.45.64"
+  fields <- "status,message,query,country,city"
+
+  string <- get_location(ip, fields) |>
+    httr2::resp_body_string()
+
+  string_split <- stringr::str_split_1(string, ",")
+
+  fields_split <- stringr::str_split_1(fields, ",")
+
+  fields_n <- length(fields_split)
+  string_n <- length(string_split)
+
+  if (fields_n == string_n + 1){
+    string_split <- append(string_split, NA, after = 1)
+
+    string <- paste(string_split, collapse = ",")
+  }
+
+  data <- read.csv(text = c(fields, string), header = TRUE)
 }
+
+
+
 
 #' Get location
 #'
