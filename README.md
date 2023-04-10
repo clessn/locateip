@@ -29,7 +29,7 @@ devtools::install_github("clessn/locateip")
 library(locateip)
 
 locate_ip("142.162.45.64")
-#> [1] "success,Canada,CA,NB,New Brunswick,Fredericton,E3A,46.0401,-66.3862,America/Moncton,Bell Canada,Bell Canada,AS855 Bell Canada,142.162.45.64\n"
+#> [1] "success,Canada,Fredericton,142.162.45.64\n"
 ```
 
 ## Usage
