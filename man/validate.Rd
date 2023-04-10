@@ -15,6 +15,9 @@ validate_ipv6(ip)
 \arguments{
 \item{ip}{IP address in IPv4 or IPv6}
 }
+\value{
+Logical.
+}
 \description{
 Validate
 }
