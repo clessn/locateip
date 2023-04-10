@@ -45,3 +45,6 @@ validate_ipv6 <- function(ip){
 validate_ipv6("2a01:cb08:832a:500:d9e3:a1d0:3d20:5f7e")
 
 validate_ipv4("142.162.45.64")
+
+validate_ip("142.162.45.64")
+
