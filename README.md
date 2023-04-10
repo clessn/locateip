@@ -4,6 +4,8 @@
 # locateip
 
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/clessn/ipadress/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/clessn/ipadress/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The goal of locateip is to locate IP addresses using
