@@ -11,7 +11,7 @@ coverage](https://codecov.io/gh/clessn/locateip/branch/main/graph/badge.svg)](ht
 <!-- badges: end -->
 
 The goal of locateip is to locate IP addresses using
-[ip-api.com](ip-api.com)
+[ip-api.com](https://ip-api.com/)
 
 ## Installation
 
@@ -34,3 +34,10 @@ resp |>
   httr2::resp_body_string()
 #> [1] "success,Canada,CA,NB,New Brunswick,Fredericton,E3A,46.0401,-66.3862,America/Moncton,Bell Canada,Bell Canada,AS855 Bell Canada,142.162.45.64\n"
 ```
+
+## Usage
+
+[ip-api](https://ip-api.com/) is free for non-commercial use.
+
+For API documentation and terms of service, see
+[ip-api.com](https://ip-api.com/).
