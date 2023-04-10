@@ -10,7 +10,7 @@ locate_ip(ip)
 \item{ip}{A single IPv4/IPv6 address or a domain name. If you don't supply a query the current IP address will be used.}
 }
 \value{
-A tibble.
+A string.
 }
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
@@ -19,8 +19,5 @@ A tibble.
 For API documentation and terms of service, see \href{https://ip-api.com/}{ip-api.com}.
 }
 \examples{
-resp <- locate_ip("142.162.45.64")
-
-resp |>
-  httr2::resp_body_string()
+locate_ip("142.162.45.64")
 }

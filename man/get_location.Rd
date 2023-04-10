@@ -23,7 +23,7 @@ Internal function.
 For API documentation and terms of service, see \href{https://ip-api.com/}{ip-api.com}.
 }
 \examples{
-resp <- locate_ip("142.162.45.64")
+resp <- get_location("142.162.45.64")
 
 resp |>
   httr2::resp_body_string()
