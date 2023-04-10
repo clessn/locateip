@@ -26,7 +26,4 @@ test_that("locate ip works", {
   output <- "success,Canada,Fredericton\n"
 
   expect_equal(locate_ip("142.162.45.64", fields = "status,message,country,city", tidy = FALSE), output)
-
-
-
 })
