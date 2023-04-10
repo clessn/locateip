@@ -28,10 +28,7 @@ devtools::install_github("clessn/locateip")
 ``` r
 library(locateip)
 
-resp <- locate_ip("142.162.45.64")
-
-resp |>
-  httr2::resp_body_string()
+locate_ip("142.162.45.64")
 #> [1] "success,Canada,CA,NB,New Brunswick,Fredericton,E3A,46.0401,-66.3862,America/Moncton,Bell Canada,Bell Canada,AS855 Bell Canada,142.162.45.64\n"
 ```
 
