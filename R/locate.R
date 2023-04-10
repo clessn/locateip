@@ -27,6 +27,8 @@ locate_ip <- function(ip) {
 #' For API documentation and terms of service, see [ip-api.com](https://ip-api.com/).
 #'
 #' @param ip A single IPv4/IPv6 address or a domain name. If you don't supply a query the current IP address will be used.
+#' @param fields Response fields to pass on to the API.
+#' @param ... Query parameters to pass on to the API.
 #' @param format Json, xml, csv, newline or php.
 #' @return A response.
 #' @export
