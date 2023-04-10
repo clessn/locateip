@@ -17,6 +17,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/clessn/ipadress/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/clessn/ipadress/actions/workflows/R-CMD-check.yaml)
+[![Codecov test coverage](https://codecov.io/gh/clessn/locateip/branch/main/graph/badge.svg)](https://app.codecov.io/gh/clessn/locateip?branch=main)
 <!-- badges: end -->
 
 The goal of locateip is to locate IP addresses using [ip-api.com](ip-api.com)
