@@ -32,7 +32,7 @@ Internal function.
 For API documentation and terms of service, see \href{https://ip-api.com/}{ip-api.com}.
 }
 \examples{
-resp <- get_location("142.162.45.64")
+resp <- get_location("132.203.167.188")
 
 resp |>
   httr2::resp_body_string()
