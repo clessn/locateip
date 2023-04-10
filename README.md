@@ -14,23 +14,9 @@ The goal of locateip is to locate IP addresses using
 You can install the development version of wikiapir from
 [GitHub](https://github.com/):
 
-1.  Create an access token in <https://github.com/settings/tokens>
-2.  Save the access token to R environ using `usethis::edit_r_environ()`
-
-``` r
-# .Renviron
-GITHUB_TOKEN <- "tokenstring"
-```
-
-3.  Install the package
-
 ``` r
 # install.packages("devtools")
-
-devtools::install_github("clessn/locateip",
-  ref = "main",
-  auth_token = Sys.getenv("GITHUB_TOKEN")
-)
+devtools::install_github("clessn/ipadress")
 ```
 
 ## Example
@@ -42,4 +28,5 @@ resp <- locate_ip("142.162.45.64")
 
 resp |>
   httr2::resp_body_string()
+#> [1] "success,Canada,CA,NB,New Brunswick,Fredericton,E3A,46.0401,-66.3862,America/Moncton,Bell Canada,Bell Canada,AS855 Bell Canada,142.162.45.64\n"
 ```
