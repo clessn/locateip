@@ -28,7 +28,7 @@ devtools::install_github("clessn/locateip")
 ``` r
 library(locateip)
 
-locate_ip("142.162.45.64")
+locate_ip("142.162.45.64", fields = c("status,message,country,city"))
 #> [1] "success,Canada,Fredericton\n"
 ```
 
