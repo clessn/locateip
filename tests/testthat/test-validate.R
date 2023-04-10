@@ -1,4 +1,5 @@
 test_that("validate ipv6 works", {
+  # Valid
   expect_equal(validate_ipv6("2a01:cb08:832a:500:d9e3:a1d0:3d20:5f7e"),
                TRUE)
 
@@ -6,6 +7,14 @@ test_that("validate ipv6 works", {
                TRUE)
   expect_equal(validate_ipv6("2001:db8::ff00:42:8329"),
                TRUE) # Abbreviation of previous
+
+  # Not valid
+  expect_equal(validate_ipv6("0"),
+               FALSE)
+  expect_equal(validate_ipv6(""),
+               FALSE)
+  expect_equal(validate_ipv6("NotAnIp"),
+               FALSE)
 })
 
 test_that("validate ipv4 works", {
