@@ -28,11 +28,11 @@ devtools::install_github("clessn/locateip")
 ``` r
 library(locateip)
 
-locate_ip("142.162.45.64", fields = c("status,message,country,city"))
+locate_ip("132.203.167.188", fields = c("status,message,country,city"))
 #> # A tibble: 1 × 4
-#>   status  message country city       
-#>   <chr>   <lgl>   <chr>   <chr>      
-#> 1 success NA      Canada  Fredericton
+#>   status  message country city  
+#>   <chr>   <lgl>   <chr>   <chr> 
+#> 1 success NA      Canada  Québec
 ```
 
 ## Usage

@@ -19,11 +19,11 @@ test_that("locate ip works", {
   output <- tibble::tibble(status = "success",
                            message = NA,
                            country = "Canada",
-                           city = "Fredericton")
+                           city = "Québec")
 
-  expect_equal(locate_ip("142.162.45.64", fields = "status,message,country,city", tidy = TRUE), output)
+  expect_equal(locate_ip("132.203.167.188", fields = "status,message,country,city", tidy = TRUE), output)
 
-  output <- "success,Canada,Fredericton\n"
+  output <- "success,Canada,Québec\n"
 
-  expect_equal(locate_ip("142.162.45.64", fields = "status,message,country,city", tidy = FALSE), output)
+  expect_equal(locate_ip("132.203.167.188", fields = "status,message,country,city", tidy = FALSE), output)
 })

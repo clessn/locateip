@@ -9,7 +9,7 @@
 #' @return A string or a tibble.
 #' @export
 #' @examples
-#' locate_ip("142.162.45.64")
+#' locate_ip("132.203.167.188")
 locate_ip <- function(ip, fields = c("status,message,country,city"), ..., tidy = TRUE) {
   resp <- get_location(ip, fields = fields, ..., format = "csv")
 
@@ -40,7 +40,7 @@ locate_ip <- function(ip, fields = c("status,message,country,city"), ..., tidy =
 #' @return A response.
 #' @export
 #' @examples
-#' resp <- get_location("142.162.45.64")
+#' resp <- get_location("132.203.167.188")
 #'
 #' resp |>
 #'   httr2::resp_body_string()
@@ -79,7 +79,7 @@ get_location <- function(ip, fields = c("status,message,country,city"), ..., for
 #' @return Tibble.
 #' @export
 #' @examples
-#' ip <- "142.162.45.64"
+#' ip <- "132.203.167.188"
 #' fields <- "status,message,country,city"
 #'
 #' response <- get_location(ip, fields) |>

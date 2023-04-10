@@ -20,7 +20,7 @@ Tibble.
 Internal function.
 }
 \examples{
-ip <- "142.162.45.64"
+ip <- "132.203.167.188"
 fields <- "status,message,country,city"
 
 response <- get_location(ip, fields) |>

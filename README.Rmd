@@ -36,7 +36,7 @@ devtools::install_github("clessn/locateip")
 ```{r example}
 library(locateip)
 
-locate_ip("142.162.45.64", fields = c("status,message,country,city"))
+locate_ip("132.203.167.188", fields = c("status,message,country,city"))
 ```
 
 ## Usage
