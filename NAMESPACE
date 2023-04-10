@@ -2,6 +2,7 @@
 
 export(get_location)
 export(locate_ip)
+export(tidy_location)
 export(validate_ip)
 importFrom(httr2,req_perform)
 importFrom(httr2,req_throttle)

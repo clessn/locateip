@@ -18,6 +18,22 @@ locate_ip <- function(ip, fields = c("status,message,query,country,city"), ...) 
   return(string)
 }
 
+#' Tidy location string into a tibble
+#'
+#' @description
+#' `r lifecycle::badge('experimental')`
+#'
+#' Internal function.
+#'
+#' @param string Body string response
+#' @inheritParams get_location
+#'
+#' @return Tibble.
+#' @export
+tidy_location <- function(string, fields) {
+
+}
+
 #' Get location
 #'
 #' `r lifecycle::badge('experimental')`
