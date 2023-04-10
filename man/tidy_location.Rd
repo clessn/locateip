@@ -21,7 +21,7 @@ Internal function.
 }
 \examples{
 ip <- "142.162.45.64"
-fields <- "status,message,country,city,query"
+fields <- "status,message,country,city"
 
 response <- get_location(ip, fields) |>
    httr2::resp_body_string()
