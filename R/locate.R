@@ -55,7 +55,7 @@ tidy_location <- function(string, fields) {
     string <- paste(string_split, collapse = ",")
   }
 
-  data <- read.csv(text = c(fields, string), header = TRUE) |>
+  data <- utils::read.csv(text = c(fields, string), header = TRUE) |>
     tibble::as_tibble()
 
   return(data)
