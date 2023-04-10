@@ -13,7 +13,7 @@ validate_ipv4(ip)
 validate_ipv6(ip)
 }
 \arguments{
-\item{ip}{String. IP address in IPv4 or IPv6.}
+\item{ip}{String. IP address as IPv4 or IPv6.}
 }
 \value{
 Logical. TRUE if it's either IPv4 or IPv6, FALSE if not.
@@ -21,7 +21,7 @@ Logical. TRUE if it's either IPv4 or IPv6, FALSE if not.
 \description{
 Internal function.
 
-Validate an IP adress in IPv4 or IPv6.
+Validate an IP adress as IPv4 or IPv6.
 }
 \section{Functions}{
 \itemize{
