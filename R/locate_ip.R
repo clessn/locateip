@@ -39,7 +39,13 @@ locate_ip <- function(ip, format = "csv") {
 #'
 #' @param ip String. IP address as IPv4 or IPv6.
 #' @return Logical. TRUE if it's either IPv4 or IPv6, FALSE if not.
+#'
+#' @examples
+#'
+#' validate_ip("0.0.0.0")
+#'
 #' @describeIn validate Validate IPv4 or IPv6
+#' @export
 validate_ip <- function(ip) {
   is_ipv4 <- validate_ipv4(ip)
   is_ipv6 <- validate_ipv6(ip)

@@ -34,3 +34,8 @@ Validate an IP adress as IPv4 or IPv6.
 \item \code{validate_ipv6()}: Validate IPv6
 
 }}
+\examples{
+
+validate_ip("0.0.0.0")
+
+}
