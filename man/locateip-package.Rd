@@ -4,12 +4,12 @@
 \name{locateip-package}
 \alias{locateip}
 \alias{locateip-package}
-\title{locateip: What the Package Does (One Line, Title Case)}
+\title{locateip: Locate IP addresses with ip-api}
 \description{
 What the package does (one paragraph).
 }
 \author{
-\strong{Maintainer}: First Last \email{first.last@example.com} (\href{https://orcid.org/YOUR-ORCID-ID}{ORCID})
+\strong{Maintainer}: Judith Bourque \email{info@clessn.ca}
 
 }
 \keyword{internal}
