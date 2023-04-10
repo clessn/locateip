@@ -1,5 +1,5 @@
 Package: locateip
-Title: What the Package Does (One Line, Title Case)
+Title: Locate IP addresses with ip-api
 Version: 0.0.0.9004
 Authors@R: 
     person("Judith", "Bourque", , "info@clessn.ca", role = c("aut", "cre"))
