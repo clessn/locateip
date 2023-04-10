@@ -4,7 +4,12 @@
 \alias{get_location}
 \title{Get location}
 \usage{
-get_location(ip, format = "csv")
+get_location(
+  ip,
+  fields = c("status,message,query,country,city"),
+  ...,
+  format = "csv"
+)
 }
 \arguments{
 \item{ip}{A single IPv4/IPv6 address or a domain name. If you don't supply a query the current IP address will be used.}
