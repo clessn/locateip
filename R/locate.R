@@ -14,18 +14,9 @@
 #' resp |>
 #'   httr2::resp_body_string()
 locate_ip <- function(ip, format = "csv") {
-  if (validate_ip(ip) == FALSE) {
-    return(print("Pleade use a valid IP adress"))
-  } else {
-    resp <- httr2::request("http://ip-api.com") |>
-      httr2::req_url_path_append(format) |>
-      httr2::req_url_path_append(ip) |>
-      httr2::req_user_agent("locateip (https://github.com/clessn; info@clessn.ca)") |>
-      httr2::req_throttle(45 / 60) |>
-      httr2::req_perform()
+  resp <- get_location(ip, format = format)
 
-    return(resp)
-  }
+  return(resp)
 }
 
 #' Get location
