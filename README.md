@@ -13,12 +13,12 @@ The goal of locateip is to locate IP addresses using
 
 ## Installation
 
-You can install the development version of wikiapir from
+You can install the development version of locateip from
 [GitHub](https://github.com/):
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("clessn/ipadress")
+devtools::install_github("clessn/locateip")
 ```
 
 ## Example

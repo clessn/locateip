@@ -23,11 +23,11 @@ The goal of locateip is to locate IP addresses using [ip-api.com](ip-api.com)
 
 ## Installation
 
-You can install the development version of wikiapir from [GitHub](https://github.com/):
+You can install the development version of locateip from [GitHub](https://github.com/):
 
 ```{r eval = FALSE}
 # install.packages("devtools")
-devtools::install_github("clessn/ipadress")
+devtools::install_github("clessn/locateip")
 ```
 
 ## Example
