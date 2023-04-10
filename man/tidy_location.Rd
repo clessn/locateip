@@ -7,9 +7,9 @@
 tidy_location(response = NULL, fields = NULL)
 }
 \arguments{
-\item{fields}{Response fields to pass on to the API.}
+\item{response}{Body string response}
 
-\item{string}{Body string response}
+\item{fields}{Response fields to pass on to the API.}
 }
 \value{
 Tibble.

@@ -25,7 +25,7 @@ locate_ip <- function(ip, fields = c("status,message,country,city,query"), ...) 
 #'
 #' Internal function.
 #'
-#' @param string Body string response
+#' @param response Body string response
 #' @inheritParams get_location
 #'
 #' @return Tibble.
