@@ -9,7 +9,7 @@
 #' @export
 #' @examples
 #' locate_ip("142.162.45.64")
-locate_ip <- function(ip, fields = c("status,message,query,country,city"), ...) {
+locate_ip <- function(ip, fields = c("status,message,country,city,query"), ...) {
   resp <- get_location(ip, fields = fields, ..., format = "csv")
 
   string <- resp |>
@@ -37,7 +37,7 @@ locate_ip <- function(ip, fields = c("status,message,query,country,city"), ...) 
 #'
 #' resp |>
 #'   httr2::resp_body_string()
-get_location <- function(ip, fields = c("status,message,query,country,city"), ..., format = "csv") {
+get_location <- function(ip, fields = c("status,message,country,city,query"), ..., format = "csv") {
   if (validate_ip(ip) == FALSE) {
     return(print("Pleade use a valid IP adress"))
   } else {
@@ -57,4 +57,47 @@ get_location <- function(ip, fields = c("status,message,query,country,city"), ..
 
     return(resp)
   }
+}
+
+#' Tidy location string into a tibble
+#'
+#' @description
+#' `r lifecycle::badge('experimental')`
+#'
+#' Internal function.
+#'
+#' @param response Body string response
+#' @inheritParams get_location
+#'
+#' @return Tibble.
+#' @export
+#' @examples
+#' ip <- "142.162.45.64"
+#' fields <- "status,message,country,city,query"
+#'
+#' response <- get_location(ip, fields) |>
+#'    httr2::resp_body_string()
+#'
+#' tidy_location(response, fields)
+#'
+tidy_location <- function(response = NULL, fields = NULL) {
+
+  response <- stringr::str_trim(response, side = "right")
+
+  response_split <- stringr::str_split_1(response, ",")
+  fields_split <- stringr::str_split_1(fields, ",")
+
+  fields_n <- length(fields_split)
+  response_n <- length(response_split)
+
+  if (fields_n == response_n + 1){
+    response_split <- append(response_split, NA, after = 1)
+
+    response <- paste(response_split, collapse = ",")
+  }
+
+  data <- utils::read.csv(text = c(fields, response), header = TRUE) |>
+    tibble::as_tibble()
+
+  return(data)
 }
