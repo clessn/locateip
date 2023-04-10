@@ -38,7 +38,7 @@ devtools::install_github("clessn/locateip",
 ``` r
 library(locateip)
 
-resp <- get_address("142.162.45.64")
+resp <- locate_ip("142.162.45.64")
 
 resp |>
   httr2::resp_body_string()
