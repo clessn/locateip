@@ -1,12 +1,12 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# ipadress
+# locateip
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of ipadress is to locate IP addresses using
+The goal of locateip is to locate IP addresses using
 [ip-api.com](ip-api.com)
 
 ## Installation
@@ -27,7 +27,7 @@ GITHUB_TOKEN <- "tokenstring"
 ``` r
 # install.packages("devtools")
 
-devtools::install_github("clessn/ipadress",
+devtools::install_github("clessn/locateip",
   ref = "main",
   auth_token = Sys.getenv("GITHUB_TOKEN")
 )
@@ -36,7 +36,7 @@ devtools::install_github("clessn/ipadress",
 ## Example
 
 ``` r
-library(ipadress)
+library(locateip)
 
 resp <- get_address("142.162.45.64")
 
