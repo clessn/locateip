@@ -30,13 +30,16 @@ locate_ip <- function(ip, fields = c("status,message,query,country,city"), ...) 
 #'
 #' @return Tibble.
 #' @export
+#' @examples
+#' ip <- "142.162.45.64"
+#' fields <- "status,message,country,city,query"
+#'
+#' string <- get_location(ip, fields) |>
+#'    httr2::resp_body_string()
+#'
+#' tidy_location(string, fields)
+#'
 tidy_location <- function(string, fields) {
-
-  ip <- "142.162.45.64"
-  fields <- "status,message,country,city,query"
-
-  string <- get_location(ip, fields) |>
-    httr2::resp_body_string()
 
   string <- stringr::str_trim(string, side = "right")
 
@@ -55,6 +58,8 @@ tidy_location <- function(string, fields) {
 
   data <- read.csv(text = c(fields, string), header = TRUE) |>
     tibble::as_tibble()
+
+  return(data)
 }
 
 
