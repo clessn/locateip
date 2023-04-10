@@ -4,7 +4,7 @@
 \alias{validate_ip}
 \alias{validate_ipv4}
 \alias{validate_ipv6}
-\title{Validate}
+\title{Validate an IP address}
 \usage{
 validate_ip(ip)
 
@@ -13,13 +13,13 @@ validate_ipv4(ip)
 validate_ipv6(ip)
 }
 \arguments{
-\item{ip}{IP address in IPv4 or IPv6}
+\item{ip}{String. IP address in IPv4 or IPv6}
 }
 \value{
-Logical.
+Logical. TRUE if it's either IPv4 or IPv6, FALSE if not.
 }
 \description{
-Validate
+Validate an IP adress in IPv4 or IPv6.
 }
 \section{Functions}{
 \itemize{
