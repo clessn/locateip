@@ -4,7 +4,7 @@
 \alias{validate_ip}
 \alias{validate_ipv4}
 \alias{validate_ipv6}
-\title{Validate}
+\title{Validate an IP address}
 \usage{
 validate_ip(ip)
 
@@ -13,20 +13,29 @@ validate_ipv4(ip)
 validate_ipv6(ip)
 }
 \arguments{
-\item{ip}{IP address in IPv4 or IPv6}
+\item{ip}{String. IP address as IPv4 or IPv6.}
 }
 \value{
-Logical.
+Logical. TRUE if it's either IPv4 or IPv6, FALSE if not.
 }
 \description{
-Validate
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
+
+Internal function.
+
+Validate an IP adress as IPv4 or IPv6.
 }
 \section{Functions}{
 \itemize{
-\item \code{validate_ip()}: Validate IP
+\item \code{validate_ip()}: Validate IPv4 or IPv6
 
 \item \code{validate_ipv4()}: Validate IPv4
 
 \item \code{validate_ipv6()}: Validate IPv6
 
 }}
+\examples{
+
+validate_ip("0.0.0.0")
+
+}
