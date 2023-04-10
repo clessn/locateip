@@ -11,12 +11,26 @@ The goal of ipadress is to locate IP addresses using
 
 ## Installation
 
-You can install the development version of ipadress from
-[GitHub](https://github.com/) with:
+You can install the development version of wikiapir from
+[GitHub](https://github.com/):
+
+1.  Create an access token in <https://github.com/settings/tokens>
+2.  Save the access token to R environ using `usethis::edit_r_environ()`
+
+``` r
+# .Renviron
+GITHUB_TOKEN <- "tokenstring"
+```
+
+3.  Install the package
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("clessn/ipadress")
+
+devtools::install_github("clessn/ipadress",
+  ref = "main",
+  auth_token = Sys.getenv("GITHUB_TOKEN")
+)
 ```
 
 ## Example
