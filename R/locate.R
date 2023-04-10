@@ -5,16 +5,15 @@
 #' For API documentation and terms of service, see [ip-api.com](https://ip-api.com/).
 #'
 #' @param ip A single IPv4/IPv6 address or a domain name. If you don't supply a query the current IP address will be used.
-#' @param format Json, xml, csv, newline or php.
-#' @return A response.
+#' @return A tibble.
 #' @export
 #' @examples
 #' resp <- locate_ip("142.162.45.64")
 #'
 #' resp |>
 #'   httr2::resp_body_string()
-locate_ip <- function(ip, format = "csv") {
-  resp <- get_location(ip, format = format)
+locate_ip <- function(ip) {
+  resp <- get_location(ip, format = "csv")
 
   return(resp)
 }

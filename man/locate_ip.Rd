@@ -4,15 +4,13 @@
 \alias{locate_ip}
 \title{Locate an IP adress}
 \usage{
-locate_ip(ip, format = "csv")
+locate_ip(ip)
 }
 \arguments{
 \item{ip}{A single IPv4/IPv6 address or a domain name. If you don't supply a query the current IP address will be used.}
-
-\item{format}{Json, xml, csv, newline or php.}
 }
 \value{
-A response.
+A tibble.
 }
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
