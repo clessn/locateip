@@ -19,6 +19,8 @@ validate_ipv6(ip)
 Logical. TRUE if it's either IPv4 or IPv6, FALSE if not.
 }
 \description{
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
+
 Internal function.
 
 Validate an IP adress as IPv4 or IPv6.

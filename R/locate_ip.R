@@ -31,6 +31,8 @@ locate_ip <- function(ip, format = "csv") {
 #' Validate an IP address
 #'
 #' @description
+#' `r lifecycle::badge("experimental")`
+#'
 #' Internal function.
 #'
 #' Validate an IP adress as IPv4 or IPv6.
