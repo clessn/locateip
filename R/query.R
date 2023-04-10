@@ -5,11 +5,11 @@
 #' @return A response.
 #' @export
 #' @examples
-#' resp <- get_address("142.162.45.64")
+#' resp <- locate_ip("142.162.45.64")
 #'
 #' resp |>
 #'   httr2::resp_body_string()
-get_address <- function(ip, format = "csv") {
+locate_ip <- function(ip, format = "csv") {
 
   httr2::request("http://ip-api.com") |>
     httr2::req_url_path_append(format) |>
