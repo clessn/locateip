@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 # locateip
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/clessn/ipadress/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/clessn/ipadress/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The goal of locateip is to locate IP addresses using [ip-api.com](ip-api.com)
@@ -24,28 +25,14 @@ The goal of locateip is to locate IP addresses using [ip-api.com](ip-api.com)
 
 You can install the development version of wikiapir from [GitHub](https://github.com/):
 
-1. Create an access token in https://github.com/settings/tokens
-2. Save the access token to R environ using `usethis::edit_r_environ()`
-
-```{r, eval = FALSE}
-# .Renviron
-GITHUB_TOKEN <- "tokenstring"
-```
-
-3. Install the package
-
-```{r, eval = FALSE}
+```{r eval = FALSE}
 # install.packages("devtools")
-
-devtools::install_github("clessn/locateip",
-  ref = "main",
-  auth_token = Sys.getenv("GITHUB_TOKEN")
-)
+devtools::install_github("clessn/ipadress")
 ```
 
 ## Example
 
-```{r example, eval = FALSE}
+```{r example}
 library(locateip)
 
 resp <- locate_ip("142.162.45.64")
