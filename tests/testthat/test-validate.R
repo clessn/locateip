@@ -6,6 +6,10 @@ test_that("validate ipv6 works", {
 test_that("validate ipv4 works", {
   expect_equal(validate_ipv4("142.162.45.64"),
                TRUE)
+  expect_equal(validate_ipv4("0.0.0.0"),
+               TRUE)
+  expect_equal(validate_ipv4("127.255.255.255"),
+               TRUE)
 })
 
 test_that("validate ip works", {
