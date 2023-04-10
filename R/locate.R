@@ -34,10 +34,10 @@ locate_ip <- function(ip, fields = c("status,message,country,city,query"), ...) 
 #' ip <- "142.162.45.64"
 #' fields <- "status,message,country,city,query"
 #'
-#' string <- get_location(ip, fields) |>
+#' response <- get_location(ip, fields) |>
 #'    httr2::resp_body_string()
 #'
-#' tidy_location(string, fields)
+#' tidy_location(response, fields)
 #'
 tidy_location <- function(response = NULL, fields = NULL) {
 
