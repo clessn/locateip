@@ -39,23 +39,23 @@ locate_ip <- function(ip, fields = c("status,message,country,city,query"), ...) 
 #'
 #' tidy_location(string, fields)
 #'
-tidy_location <- function(string, fields) {
+tidy_location <- function(response = NULL, fields = NULL) {
 
-  string <- stringr::str_trim(string, side = "right")
+  response <- stringr::str_trim(response, side = "right")
 
-  string_split <- stringr::str_split_1(string, ",")
+  response_split <- stringr::str_split_1(response, ",")
   fields_split <- stringr::str_split_1(fields, ",")
 
   fields_n <- length(fields_split)
-  string_n <- length(string_split)
+  response_n <- length(response_split)
 
-  if (fields_n == string_n + 1){
-    string_split <- append(string_split, NA, after = 1)
+  if (fields_n == response_n + 1){
+    response_split <- append(response_split, NA, after = 1)
 
-    string <- paste(string_split, collapse = ",")
+    response <- paste(response_split, collapse = ",")
   }
 
-  data <- utils::read.csv(text = c(fields, string), header = TRUE) |>
+  data <- utils::read.csv(text = c(fields, response), header = TRUE) |>
     tibble::as_tibble()
 
   return(data)

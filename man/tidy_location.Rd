@@ -4,12 +4,12 @@
 \alias{tidy_location}
 \title{Tidy location string into a tibble}
 \usage{
-tidy_location(string, fields)
+tidy_location(response = NULL, fields = NULL)
 }
 \arguments{
-\item{string}{Body string response}
-
 \item{fields}{Response fields to pass on to the API.}
+
+\item{string}{Body string response}
 }
 \value{
 Tibble.
