@@ -4,7 +4,7 @@
 \alias{locate_ip}
 \title{Locate an IP adress}
 \usage{
-locate_ip(ip, fields = c("status,message,country,city"), ...)
+locate_ip(ip, fields = c("status,message,country,city"), ..., tidy = TRUE)
 }
 \arguments{
 \item{ip}{A single IPv4/IPv6 address or a domain name. If you don't supply a query the current IP address will be used.}
@@ -12,9 +12,11 @@ locate_ip(ip, fields = c("status,message,country,city"), ...)
 \item{fields}{Response fields to pass on to the API.}
 
 \item{...}{Query parameters to pass on to the API.}
+
+\item{tidy}{Logical. TRUE to return a tibble. FALSE to return a string.}
 }
 \value{
-A string.
+A string or a tibble.
 }
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
