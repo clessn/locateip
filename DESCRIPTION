@@ -1,9 +1,9 @@
 Package: locateip
 Title: Locate IP Addresses With 'ip-api'
-Version: 0.0.0.9021
+Version: 0.0.0.9022
 Authors@R: 
     person("Judith", "Bourque", , "info@clessn.ca", role = c("aut", "cre", "cph"))
-Description: Locate IP addresses with 'ip-api'.
+Description: Locate Internet Protocol (IP) addresses with 'ip-api'.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

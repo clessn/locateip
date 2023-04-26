@@ -6,7 +6,7 @@
 \alias{locateip-package}
 \title{locateip: Locate IP Addresses With 'ip-api'}
 \description{
-Locate IP addresses with 'ip-api'.
+Locate Internet Protocol (IP) addresses with 'ip-api'.
 }
 \author{
 \strong{Maintainer}: Judith Bourque \email{info@clessn.ca} [copyright holder]
