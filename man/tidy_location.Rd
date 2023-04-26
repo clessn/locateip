@@ -19,13 +19,3 @@ Tibble.
 
 Internal function.
 }
-\examples{
-ip <- "132.203.167.188"
-fields <- "status,message,country,city"
-
-response <- get_location(ip, fields) |>
-   httr2::resp_body_string()
-
-tidy_location(response, fields)
-
-}

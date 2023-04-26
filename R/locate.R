@@ -73,15 +73,6 @@ get_location <- function(ip, fields = c("status,message,country,city"), ..., for
 #' @param fields Response fields to pass on to the API.
 #' @return Tibble.
 #' @export
-#' @examples
-#' ip <- "132.203.167.188"
-#' fields <- "status,message,country,city"
-#'
-#' response <- get_location(ip, fields) |>
-#'    httr2::resp_body_string()
-#'
-#' tidy_location(response, fields)
-#'
 tidy_location <- function(response = NULL, fields = NULL) {
 
   response <- stringr::str_trim(response, side = "right")
