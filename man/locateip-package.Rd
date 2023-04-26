@@ -9,7 +9,7 @@
 What the package does (one paragraph).
 }
 \author{
-\strong{Maintainer}: Judith Bourque \email{info@clessn.ca}
+\strong{Maintainer}: Judith Bourque \email{info@clessn.ca} [copyright holder]
 
 }
 \keyword{internal}
