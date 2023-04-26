@@ -3,8 +3,6 @@
 #' @description
 #' `r lifecycle::badge("experimental")`
 #'
-#' Internal function.
-#'
 #' Validate an IP adress as IPv4 or IPv6.
 #'
 #' @param ip String. IP address as IPv4 or IPv6.
@@ -15,7 +13,6 @@
 #' validate_ip("0.0.0.0")
 #'
 #' @describeIn validate Validate IPv4 or IPv6
-#' @export
 validate_ip <- function(ip) {
   is_ipv4 <- validate_ipv4(ip)
   is_ipv6 <- validate_ipv6(ip)
