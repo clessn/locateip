@@ -4,7 +4,7 @@
 \name{locateip-package}
 \alias{locateip}
 \alias{locateip-package}
-\title{locateip: Locate IP addresses with ip-api}
+\title{locateip: Locate IP Addresses With IP-API}
 \description{
 What the package does (one paragraph).
 }
