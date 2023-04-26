@@ -3,7 +3,7 @@ Title: Locate IP Addresses With IP-API
 Version: 0.0.0.9019
 Authors@R: 
     person("Judith", "Bourque", , "info@clessn.ca", role = c("aut", "cre", "cph"))
-Description: What the package does (one paragraph).
+Description: Locate IP addresses with IP-API.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
