@@ -4,8 +4,10 @@
 #'
 #' For API documentation and terms of service, see [ip-api.com](https://ip-api.com/).
 #'
+#' @param ip A single IPv4/IPv6 address or a domain name. If you don't supply a query the current IP address will be used.
+#' @param fields Response fields to pass on to the API.
+#' @param ... Query parameters to pass on to the API.
 #' @param tidy Logical. TRUE to return a tibble. FALSE to return a string.
-#' @inheritParams get_location
 #' @return A string or a tibble.
 #' @export
 #' @examples
@@ -29,8 +31,6 @@ locate_ip <- function(ip, fields = c("status,message,country,city"), ..., tidy =
 #'
 #' `r lifecycle::badge('experimental')`
 #'
-#' Internal function.
-#'
 #' For API documentation and terms of service, see [ip-api.com](https://ip-api.com/).
 #'
 #' @param ip A single IPv4/IPv6 address or a domain name. If you don't supply a query the current IP address will be used.
@@ -38,12 +38,8 @@ locate_ip <- function(ip, fields = c("status,message,country,city"), ..., tidy =
 #' @param ... Query parameters to pass on to the API.
 #' @param format Json, xml, csv, newline or php.
 #' @return A response.
-#' @export
-#' @examples
-#' resp <- get_location("132.203.167.188")
 #'
-#' resp |>
-#'   httr2::resp_body_string()
+#' @noRd
 get_location <- function(ip, fields = c("status,message,country,city"), ..., format = "csv") {
   if (validate_ip(ip) == FALSE) {
     return(print("Pleade use a valid IP adress"))
@@ -74,19 +70,9 @@ get_location <- function(ip, fields = c("status,message,country,city"), ..., for
 #' Internal function.
 #'
 #' @param response Body string response
-#' @inheritParams get_location
-#'
+#' @param fields Response fields to pass on to the API.
+#' @noRd
 #' @return Tibble.
-#' @export
-#' @examples
-#' ip <- "132.203.167.188"
-#' fields <- "status,message,country,city"
-#'
-#' response <- get_location(ip, fields) |>
-#'    httr2::resp_body_string()
-#'
-#' tidy_location(response, fields)
-#'
 tidy_location <- function(response = NULL, fields = NULL) {
 
   response <- stringr::str_trim(response, side = "right")
