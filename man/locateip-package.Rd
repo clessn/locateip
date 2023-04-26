@@ -4,9 +4,9 @@
 \name{locateip-package}
 \alias{locateip}
 \alias{locateip-package}
-\title{locateip: Locate IP addresses with ip-api}
+\title{locateip: Locate IP Addresses With ip-api.com}
 \description{
-What the package does (one paragraph).
+Locate IP addresses with ip-api.com.
 }
 \author{
 \strong{Maintainer}: Judith Bourque \email{info@clessn.ca} [copyright holder]
