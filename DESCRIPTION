@@ -1,8 +1,8 @@
 Package: locateip
 Title: Locate IP addresses with ip-api
-Version: 0.0.0.9018
+Version: 0.0.0.9019
 Authors@R: 
-    person("Judith", "Bourque", , "info@clessn.ca", role = c("aut", "cre"))
+    person("Judith", "Bourque", , "info@clessn.ca", role = c("aut", "cre", "cph"))
 Description: What the package does (one paragraph).
 License: MIT + file LICENSE
 Encoding: UTF-8
