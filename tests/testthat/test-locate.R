@@ -74,4 +74,8 @@ test_that("create request works", {
   expect_equal(req[["url"]],
                "http://ip-api.com/csv?fields=status%2Cmessage%2Ccountry%2Ccity&lang=en")
 
+  req <- create_req(header = "true")
+  expect_equal(req[["url"]],
+               "http://ip-api.com/csv?fields=status%2Cmessage%2Ccountry%2Ccity&header=true")
+
 })
