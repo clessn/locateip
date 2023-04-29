@@ -1,14 +1,11 @@
-test_that("tidy location works", {
+test_that("tidy response works", {
   output <- tibble::tibble(
-    status = "success",
-    message = NA,
-    country = "Canada",
-    city = "Fredericton",
-    query = "0.0.0.0"
+    status = "fail",
+    message = "invalid query"
   )
 
   expect_equal(
-    tidy_location(response = "success,Canada,Fredericton,0.0.0.0\n", fields = "status,message,country,city,query"),
+    tidy_resp(response = "status,message\nfail,invalid query\n"),
     output
   )
 
@@ -20,7 +17,7 @@ test_that("tidy location works", {
   )
 
   expect_equal(
-    tidy_location(response = "success,Canada,Fredericton,0.0.0.0\n", fields = "status,country,city,query"),
+    tidy_resp(response = "status,country,city,query\nsuccess,Canada,Fredericton,0.0.0.0\n"),
     output
   )
 })
@@ -28,20 +25,19 @@ test_that("tidy location works", {
 test_that("locate ip works", {
   output <- tibble::tibble(
     status = "success",
-    message = NA,
     country = "Canada",
     city = "Québec"
   )
 
   expect_equal(
-    locate_ip("132.203.167.188", fields = "status,message,country,city", tidy = TRUE),
+    locate_ip("132.203.167.188", tidy = TRUE),
     output
   )
 
-  output <- "success,Canada,Québec\n"
+  output <- "status,country,city\nsuccess,Canada,Québec\n"
 
   expect_equal(
-    locate_ip("132.203.167.188", fields = "status,message,country,city", tidy = FALSE),
+    locate_ip("132.203.167.188", tidy = FALSE),
     output
   )
 })

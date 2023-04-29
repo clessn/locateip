@@ -25,7 +25,7 @@ locate_ip <-
       httr2::resp_body_string()
 
     if (tidy) {
-      data <- tidy_location(response = string, fields = fields)
+      data <- tidy_resp(response = string)
 
       return(data)
     } else {
@@ -77,6 +77,8 @@ create_req <-
 #'
 #' @param ip A single IPv4/IPv6 address or a domain name. If you don't supply a query the current IP address will be used.
 #' @param fields Response fields to pass on to the API.
+#' @param lang Response language. An ISO 639 code supported by the API. Defaults to English.
+#' @param header Logical. Get field headers.
 #' @param ... Query parameters to pass on to the API.
 #' @param format Json, xml, csv, newline or php.
 #' @return A response.
@@ -85,43 +87,29 @@ create_req <-
 get_location <-
   function(ip = NULL,
            fields = c("status,message,country,city"),
+           lang = "en",
+           header = "true",
            ...,
            format = "csv") {
-    resp <- create_req(ip = ip, fields = fields, ..., format = format) |>
+    resp <- create_req(ip = ip, fields = fields, lang = lang, header = header, ..., format = format) |>
       httr2::req_perform()
 
     return(resp)
   }
 
-#' Tidy location string into a tibble
+#' Tidy response string into a tibble
 #'
 #' @description
 #' `r lifecycle::badge('experimental')`
 #'
 #' Internal function.
 #'
-#' @param response Body string response
-#' @param fields Response fields to pass on to the API.
+#' @param response Body string response with field headers
 #' @noRd
 #' @return Tibble.
-tidy_location <- function(response = NULL, fields = NULL) {
-  response <- stringr::str_trim(response, side = "right")
+tidy_resp <- function(response = NULL) {
 
-  response_split <- stringr::str_split_1(response, ",")
-  fields_split <- stringr::str_split_1(fields, ",")
-
-  fields_n <- length(fields_split)
-  response_n <- length(response_split)
-
-  if (fields_n == response_n + 1) {
-    response_split <- append(response_split, NA, after = 1)
-
-    response <- paste(response_split, collapse = ",")
-  }
-
-  data <-
-    utils::read.csv(text = c(fields, response), header = TRUE) |>
-    tibble::as_tibble()
+  data <-readr::read_csv(response, show_col_types = FALSE)
 
   return(data)
 }
