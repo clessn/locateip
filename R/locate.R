@@ -6,6 +6,7 @@
 #'
 #' @param ip A single IPv4/IPv6 address or a domain name. If you don't supply a query the current IP address will be used.
 #' @param fields Response fields to pass on to the API.
+#' @param lang Response language. An ISO 639 code supported by the API. Defaults to English.
 #' @param ... Query parameters to pass on to the API.
 #' @param tidy Logical. TRUE to return a tibble. FALSE to return a string.
 #' @return A string or a tibble.
@@ -15,9 +16,10 @@
 locate_ip <-
   function(ip = NULL,
            fields = c("status,message,country,city"),
+           lang = "en",
            ...,
            tidy = TRUE) {
-    resp <- get_location(ip, fields = fields, ..., format = "csv")
+    resp <- get_location(ip, fields = fields, lang = lang, ..., format = "csv")
 
     string <- resp |>
       httr2::resp_body_string()
