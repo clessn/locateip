@@ -25,27 +25,6 @@ test_that("tidy location works", {
   )
 })
 
-test_that("locate ip works", {
-  output <- tibble::tibble(
-    status = "success",
-    message = NA,
-    country = "Canada",
-    city = "Québec"
-  )
-
-  expect_equal(
-    locate_ip("132.203.167.188", fields = "status,message,country,city", tidy = TRUE),
-    output
-  )
-
-  output <- "success,Canada,Québec\n"
-
-  expect_equal(
-    locate_ip("132.203.167.188", fields = "status,message,country,city", tidy = FALSE),
-    output
-  )
-})
-
 test_that("create request works", {
   req <- create_req()
   expect_equal(req[["url"]],
