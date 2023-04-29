@@ -31,6 +31,38 @@ locate_ip <-
     }
   }
 
+#' Create request for 'ip-api'
+#'
+#' `r lifecycle::badge('experimental')`
+#'
+#' For API documentation and terms of service, see [ip-api.com](https://ip-api.com/).
+#'
+#' @param ip A single IPv4/IPv6 address or a domain name. If you don't supply a query the current IP address will be used.
+#' @param fields Response fields to pass on to the API.
+#' @param ... Query parameters to pass on to the API.
+#' @param format Json, xml, csv, newline or php.
+#' @return A response.
+#'
+#' @noRd
+create_req <-
+  function(ip = NULL,
+           fields = c("status,message,country,city"),
+           ...,
+           format = "csv") {
+    params <- list(fields = fields,
+                   ...)
+
+
+    resp <- httr2::request("http://ip-api.com") |>
+      httr2::req_url_path_append(format) |>
+      httr2::req_url_path_append(ip) |>
+      httr2::req_url_query(!!!params) |>
+      httr2::req_user_agent("locateip (https://github.com/clessn; info@clessn.ca)") |>
+      httr2::req_throttle(45 / 60)
+
+    return(resp)
+  }
+
 #' Get location
 #'
 #' `r lifecycle::badge('experimental')`
@@ -49,16 +81,7 @@ get_location <-
            fields = c("status,message,country,city"),
            ...,
            format = "csv") {
-    params <- list(fields = fields,
-                   ...)
-
-
-    resp <- httr2::request("http://ip-api.com") |>
-      httr2::req_url_path_append(format) |>
-      httr2::req_url_path_append(ip) |>
-      httr2::req_url_query(!!!params) |>
-      httr2::req_user_agent("locateip (https://github.com/clessn; info@clessn.ca)") |>
-      httr2::req_throttle(45 / 60) |>
+    resp <- create_req() |>
       httr2::req_perform()
 
     return(resp)
