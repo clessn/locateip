@@ -1,14 +1,11 @@
 test_that("tidy location works", {
   output <- tibble::tibble(
-    status = "success",
-    message = NA,
-    country = "Canada",
-    city = "Fredericton",
-    query = "0.0.0.0"
+    status = "fail",
+    message = "invalid query"
   )
 
   expect_equal(
-    tidy_location(response = "success,Canada,Fredericton,0.0.0.0\n", fields = "status,message,country,city,query"),
+    tidy_location(response = "status,message\nfail,invalid query\n"),
     output
   )
 
@@ -20,7 +17,7 @@ test_that("tidy location works", {
   )
 
   expect_equal(
-    tidy_location(response = "success,Canada,Fredericton,0.0.0.0\n", fields = "status,country,city,query"),
+    tidy_location(response = "status,country,city,query\nsuccess,Canada,Fredericton,0.0.0.0\n"),
     output
   )
 })
