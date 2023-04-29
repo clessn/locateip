@@ -13,7 +13,7 @@
 #' @examples
 #' locate_ip("132.203.167.188")
 locate_ip <-
-  function(ip,
+  function(ip = NULL,
            fields = c("status,message,country,city"),
            ...,
            tidy = TRUE) {
@@ -77,7 +77,7 @@ create_req <-
 #'
 #' @noRd
 get_location <-
-  function(ip,
+  function(ip = NULL,
            fields = c("status,message,country,city"),
            ...,
            format = "csv") {
