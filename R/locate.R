@@ -12,20 +12,24 @@
 #' @export
 #' @examples
 #' locate_ip("132.203.167.188")
-locate_ip <- function(ip, fields = c("status,message,country,city"), ..., tidy = TRUE) {
-  resp <- get_location(ip, fields = fields, ..., format = "csv")
+locate_ip <-
+  function(ip,
+           fields = c("status,message,country,city"),
+           ...,
+           tidy = TRUE) {
+    resp <- get_location(ip, fields = fields, ..., format = "csv")
 
-  string <- resp |>
-    httr2::resp_body_string()
+    string <- resp |>
+      httr2::resp_body_string()
 
-  if (tidy) {
-    data <- tidy_location(response = string, fields = fields)
+    if (tidy) {
+      data <- tidy_location(response = string, fields = fields)
 
-    return(data)
-  } else {
-    return(string)
+      return(data)
+    } else {
+      return(string)
+    }
   }
-}
 
 #' Get location
 #'
@@ -40,14 +44,13 @@ locate_ip <- function(ip, fields = c("status,message,country,city"), ..., tidy =
 #' @return A response.
 #'
 #' @noRd
-get_location <- function(ip, fields = c("status,message,country,city"), ..., format = "csv") {
-  if (validate_ip(ip) == FALSE) {
-    return(print("Pleade use a valid IP adress"))
-  } else {
-    params <- list(
-      fields = fields,
-      ...
-    )
+get_location <-
+  function(ip,
+           fields = c("status,message,country,city"),
+           ...,
+           format = "csv") {
+    params <- list(fields = fields,
+                   ...)
 
 
     resp <- httr2::request("http://ip-api.com") |>
@@ -60,7 +63,6 @@ get_location <- function(ip, fields = c("status,message,country,city"), ..., for
 
     return(resp)
   }
-}
 
 #' Tidy location string into a tibble
 #'
@@ -74,7 +76,6 @@ get_location <- function(ip, fields = c("status,message,country,city"), ..., for
 #' @noRd
 #' @return Tibble.
 tidy_location <- function(response = NULL, fields = NULL) {
-
   response <- stringr::str_trim(response, side = "right")
 
   response_split <- stringr::str_split_1(response, ",")
@@ -83,13 +84,14 @@ tidy_location <- function(response = NULL, fields = NULL) {
   fields_n <- length(fields_split)
   response_n <- length(response_split)
 
-  if (fields_n == response_n + 1){
+  if (fields_n == response_n + 1) {
     response_split <- append(response_split, NA, after = 1)
 
     response <- paste(response_split, collapse = ",")
   }
 
-  data <- utils::read.csv(text = c(fields, response), header = TRUE) |>
+  data <-
+    utils::read.csv(text = c(fields, response), header = TRUE) |>
     tibble::as_tibble()
 
   return(data)
