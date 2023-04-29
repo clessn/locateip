@@ -47,35 +47,31 @@ test_that("locate ip works", {
 })
 
 test_that("create request works", {
-  req <- create_req()
-  expect_equal(req[["url"]],
-               "http://ip-api.com/csv?fields=status%2Cmessage%2Ccountry%2Ccity")
-
   req <- create_req(ip = "132.203.167.188")
   expect_equal(
     req[["url"]],
     "http://ip-api.com/csv/132.203.167.188?fields=status%2Cmessage%2Ccountry%2Ccity"
   )
 
-  req <- create_req(ip = "")
+  req <- create_req(ip = NULL)
   expect_equal(req[["url"]],
                "http://ip-api.com/csv?fields=status%2Cmessage%2Ccountry%2Ccity")
 
   req <-
-    create_req(
+    create_req(ip = "132.203.167.188",
       fields = c(
         "status,message,country,countryCode,region,regionName,city,zip,lat,lon,timezone,isp,org,as,query"
       )
     )
   expect_equal(req[["url"]],
-               "http://ip-api.com/csv?fields=status%2Cmessage%2Ccountry%2CcountryCode%2Cregion%2CregionName%2Ccity%2Czip%2Clat%2Clon%2Ctimezone%2Cisp%2Corg%2Cas%2Cquery")
+               "http://ip-api.com/csv/132.203.167.188?fields=status%2Cmessage%2Ccountry%2CcountryCode%2Cregion%2CregionName%2Ccity%2Czip%2Clat%2Clon%2Ctimezone%2Cisp%2Corg%2Cas%2Cquery")
 
-  req <- create_req(lang = "en")
+  req <- create_req(ip = "132.203.167.188", lang = "en")
   expect_equal(req[["url"]],
-               "http://ip-api.com/csv?fields=status%2Cmessage%2Ccountry%2Ccity&lang=en")
+               "http://ip-api.com/csv/132.203.167.188?fields=status%2Cmessage%2Ccountry%2Ccity&lang=en")
 
-  req <- create_req(header = "true")
+  req <- create_req(ip = "132.203.167.188", header = "true")
   expect_equal(req[["url"]],
-               "http://ip-api.com/csv?fields=status%2Cmessage%2Ccountry%2Ccity&header=true")
+               "http://ip-api.com/csv/132.203.167.188?fields=status%2Cmessage%2Ccountry%2Ccity&header=true")
 
 })

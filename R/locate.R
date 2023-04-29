@@ -13,7 +13,7 @@
 #' @examples
 #' locate_ip("132.203.167.188")
 locate_ip <-
-  function(ip,
+  function(ip = NULL,
            fields = c("status,message,country,city"),
            ...,
            tidy = TRUE) {
@@ -52,15 +52,19 @@ create_req <-
     params <- list(fields = fields,
                    ...)
 
+    req <- httr2::request("http://ip-api.com") |>
+      httr2::req_url_path_append(format)
 
-    resp <- httr2::request("http://ip-api.com") |>
-      httr2::req_url_path_append(format) |>
-      httr2::req_url_path_append(ip) |>
+    if (is.null(ip) == FALSE) {
+      req <- httr2::req_url_path_append(req, ip)
+    }
+
+    req <- req |>
       httr2::req_url_query(!!!params) |>
       httr2::req_user_agent("locateip (https://github.com/clessn; info@clessn.ca)") |>
       httr2::req_throttle(45 / 60)
 
-    return(resp)
+    return(req)
   }
 
 #' Get location
@@ -77,11 +81,11 @@ create_req <-
 #'
 #' @noRd
 get_location <-
-  function(ip,
+  function(ip = NULL,
            fields = c("status,message,country,city"),
            ...,
            format = "csv") {
-    resp <- create_req() |>
+    resp <- create_req(ip = ip, fields = fields, ..., format = format) |>
       httr2::req_perform()
 
     return(resp)
