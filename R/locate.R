@@ -77,6 +77,7 @@ create_req <-
 #'
 #' @param ip A single IPv4/IPv6 address or a domain name. If you don't supply a query the current IP address will be used.
 #' @param fields Response fields to pass on to the API.
+#' @param lang Response language. An ISO 639 code supported by the API. Defaults to English.
 #' @param header Logical. Get field headers.
 #' @param ... Query parameters to pass on to the API.
 #' @param format Json, xml, csv, newline or php.
@@ -86,10 +87,11 @@ create_req <-
 get_location <-
   function(ip = NULL,
            fields = c("status,message,country,city"),
+           lang = "en",
            header = "true",
            ...,
            format = "csv") {
-    resp <- create_req(ip = ip, fields = fields, header = header, ..., format = format) |>
+    resp <- create_req(ip = ip, fields = fields, lang = lang, header = header, ..., format = format) |>
       httr2::req_perform()
 
     return(resp)
