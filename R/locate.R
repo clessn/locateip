@@ -53,8 +53,13 @@ create_req <-
                    ...)
 
     req <- httr2::request("http://ip-api.com") |>
-      httr2::req_url_path_append(format) |>
-      httr2::req_url_path_append(ip) |>
+      httr2::req_url_path_append(format)
+
+    if (is.null(ip) == FALSE) {
+      req <- httr2::req_url_path_append(req, ip)
+    }
+
+    req <- req |>
       httr2::req_url_query(!!!params) |>
       httr2::req_user_agent("locateip (https://github.com/clessn; info@clessn.ca)") |>
       httr2::req_throttle(45 / 60)
