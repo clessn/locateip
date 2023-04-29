@@ -52,15 +52,14 @@ create_req <-
     params <- list(fields = fields,
                    ...)
 
-
-    resp <- httr2::request("http://ip-api.com") |>
+    req <- httr2::request("http://ip-api.com") |>
       httr2::req_url_path_append(format) |>
       httr2::req_url_path_append(ip) |>
       httr2::req_url_query(!!!params) |>
       httr2::req_user_agent("locateip (https://github.com/clessn; info@clessn.ca)") |>
       httr2::req_throttle(45 / 60)
 
-    return(resp)
+    return(req)
   }
 
 #' Get location
