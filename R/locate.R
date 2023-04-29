@@ -81,7 +81,7 @@ get_location <-
            fields = c("status,message,country,city"),
            ...,
            format = "csv") {
-    resp <- create_req() |>
+    resp <- create_req(ip = ip, fields = fields, ..., format = format) |>
       httr2::req_perform()
 
     return(resp)
