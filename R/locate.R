@@ -77,6 +77,7 @@ create_req <-
 #'
 #' @param ip A single IPv4/IPv6 address or a domain name. If you don't supply a query the current IP address will be used.
 #' @param fields Response fields to pass on to the API.
+#' @param header Logical. Get field headers.
 #' @param ... Query parameters to pass on to the API.
 #' @param format Json, xml, csv, newline or php.
 #' @return A response.
