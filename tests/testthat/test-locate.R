@@ -57,7 +57,7 @@ test_that("create request works", {
     "http://ip-api.com/csv/132.203.167.188?fields=status%2Cmessage%2Ccountry%2Ccity"
   )
 
-  req <- create_req(ip = "")
+  req <- create_req(ip = NULL)
   expect_equal(req[["url"]],
                "http://ip-api.com/csv?fields=status%2Cmessage%2Ccountry%2Ccity")
 
