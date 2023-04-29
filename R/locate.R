@@ -25,7 +25,7 @@ locate_ip <-
       httr2::resp_body_string()
 
     if (tidy) {
-      data <- tidy_location(response = string, fields = fields)
+      data <- tidy_location(response = string)
 
       return(data)
     } else {
