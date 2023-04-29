@@ -31,14 +31,14 @@ test_that("locate ip works", {
   )
 
   expect_equal(
-    locate_ip("132.203.167.188", fields = "status,message,country,city", tidy = TRUE),
+    locate_ip("132.203.167.188", tidy = TRUE),
     output
   )
 
   output <- "success,Canada,Québec\n"
 
   expect_equal(
-    locate_ip("132.203.167.188", fields = "status,message,country,city", tidy = FALSE),
+    locate_ip("132.203.167.188", tidy = FALSE),
     output
   )
 })
