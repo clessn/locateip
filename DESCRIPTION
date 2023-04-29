@@ -11,6 +11,7 @@ RoxygenNote: 7.2.3
 Imports: 
     httr2,
     lifecycle,
+    readr,
     stringr,
     tibble,
     utils
