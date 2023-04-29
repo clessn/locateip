@@ -105,7 +105,6 @@ get_location <-
 #' Internal function.
 #'
 #' @param response Body string response
-#' @param fields Response fields to pass on to the API.
 #' @noRd
 #' @return Tibble.
 tidy_location <- function(response = NULL) {
