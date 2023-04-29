@@ -25,5 +25,7 @@ A string or a tibble.
 For API documentation and terms of service, see \href{https://ip-api.com/}{ip-api.com}.
 }
 \examples{
+\dontrun{
 locate_ip("132.203.167.188")
+}
 }

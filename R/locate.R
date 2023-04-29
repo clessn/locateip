@@ -11,7 +11,9 @@
 #' @return A string or a tibble.
 #' @export
 #' @examples
+#' \dontrun{
 #' locate_ip("132.203.167.188")
+#' }
 locate_ip <-
   function(ip,
            fields = c("status,message,country,city"),
