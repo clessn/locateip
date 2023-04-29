@@ -108,24 +108,9 @@ get_location <-
 #' @param fields Response fields to pass on to the API.
 #' @noRd
 #' @return Tibble.
-tidy_location <- function(response = NULL, fields = NULL) {
-  response <- stringr::str_trim(response, side = "right")
+tidy_location <- function(response = NULL) {
 
-  response_split <- stringr::str_split_1(response, ",")
-  fields_split <- stringr::str_split_1(fields, ",")
-
-  fields_n <- length(fields_split)
-  response_n <- length(response_split)
-
-  if (fields_n == response_n + 1) {
-    response_split <- append(response_split, NA, after = 1)
-
-    response <- paste(response_split, collapse = ",")
-  }
-
-  data <-
-    utils::read.csv(text = c(fields, response), header = TRUE) |>
-    tibble::as_tibble()
+  data <-readr::read_csv(response, show_col_types = FALSE)
 
   return(data)
 }
