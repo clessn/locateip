@@ -25,7 +25,6 @@ test_that("tidy location works", {
 test_that("locate ip works", {
   output <- tibble::tibble(
     status = "success",
-    message = NA,
     country = "Canada",
     city = "Québec"
   )
@@ -35,7 +34,7 @@ test_that("locate ip works", {
     output
   )
 
-  output <- "success,Canada,Québec\n"
+  output <- "status,country,city\nsuccess,Canada,Québec\n"
 
   expect_equal(
     locate_ip("132.203.167.188", tidy = FALSE),
