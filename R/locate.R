@@ -25,7 +25,7 @@ locate_ip <-
       httr2::resp_body_string()
 
     if (tidy) {
-      data <- tidy_location(response = string)
+      data <- tidy_resp(response = string)
 
       return(data)
     } else {
@@ -97,7 +97,7 @@ get_location <-
     return(resp)
   }
 
-#' Tidy location string into a tibble
+#' Tidy response string into a tibble
 #'
 #' @description
 #' `r lifecycle::badge('experimental')`
@@ -107,7 +107,7 @@ get_location <-
 #' @param response Body string response with field headers
 #' @noRd
 #' @return Tibble.
-tidy_location <- function(response = NULL) {
+tidy_resp <- function(response = NULL) {
 
   data <-readr::read_csv(response, show_col_types = FALSE)
 
