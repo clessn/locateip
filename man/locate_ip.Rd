@@ -7,6 +7,7 @@
 locate_ip(
   ip = NULL,
   fields = c("status,message,country,city"),
+  lang = "en",
   ...,
   tidy = TRUE
 )
@@ -15,6 +16,8 @@ locate_ip(
 \item{ip}{A single IPv4/IPv6 address or a domain name. If you don't supply a query the current IP address will be used.}
 
 \item{fields}{Response fields to pass on to the API.}
+
+\item{lang}{Response language. An ISO 639 code supported by the API. Defaults to English.}
 
 \item{...}{Query parameters to pass on to the API.}
 
