@@ -104,7 +104,7 @@ get_location <-
 #'
 #' Internal function.
 #'
-#' @param response Body string response
+#' @param response Body string response with field headers
 #' @noRd
 #' @return Tibble.
 tidy_location <- function(response = NULL) {
