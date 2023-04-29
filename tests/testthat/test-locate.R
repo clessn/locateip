@@ -27,3 +27,9 @@ test_that("locate ip works", {
 
   expect_equal(locate_ip("132.203.167.188", fields = "status,message,country,city", tidy = FALSE), output)
 })
+
+test_that("create request works", {
+  req <- create_req()
+
+  expect_equal(req[["url"]], "http://ip-api.com/csv?fields=status%2Cmessage%2Ccountry%2Ccity")
+})
