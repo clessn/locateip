@@ -1,6 +1,6 @@
 Package: locateip
 Title: Locate IP Addresses With 'ip-api'
-Version: 0.0.0.9029
+Version: 0.0.0.9030
 Authors@R: 
     person("Judith", "Bourque", , "info@clessn.ca", role = c("aut", "cre", "cph"))
 Description: Download Internet Protocol (IP) address location and more from the 'ip-api' API <https://ip-api.com/>.
