@@ -4,9 +4,9 @@
 #'
 #' For API documentation and terms of service, see [ip-api.com](https://ip-api.com/).
 #'
-#' @param ip A single IPv4/IPv6 address or a domain name. If you don't supply a query the current IP address will be used.
-#' @param fields Response fields to pass on to the API.
-#' @param lang Response language. An ISO 639 code supported by the API. Defaults to English.
+#' @param ip String. Either an IPv4 address, IPv6 address or a domain name. If NULL, will use the current IP address.
+#' @param fields String. Response fields to pass on to the API.
+#' @param lang String. Response language. An ISO 639 code supported by the API. Defaults to English.
 #' @param ... Query parameters to pass on to the API.
 #' @param tidy Logical. TRUE to return a tibble. FALSE to return a string.
 #' @return A string or a tibble.
@@ -39,10 +39,10 @@ locate_ip <-
 #'
 #' For API documentation and terms of service, see [ip-api.com](https://ip-api.com/).
 #'
-#' @param ip A single IPv4/IPv6 address or a domain name. If you don't supply a query the current IP address will be used.
-#' @param fields Response fields to pass on to the API.
+#' @param ip String. Either an IPv4 address, IPv6 address or a domain name. If NULL, will use the current IP address.
+#' @param fields String. Response fields to pass on to the API.
 #' @param ... Query parameters to pass on to the API.
-#' @param format Json, xml, csv, newline or php.
+#' @param format String. Json, xml, csv, newline or php.
 #' @return A response.
 #'
 #' @noRd
@@ -75,12 +75,12 @@ create_req <-
 #'
 #' For API documentation and terms of service, see [ip-api.com](https://ip-api.com/).
 #'
-#' @param ip A single IPv4/IPv6 address or a domain name. If you don't supply a query the current IP address will be used.
-#' @param fields Response fields to pass on to the API.
-#' @param lang Response language. An ISO 639 code supported by the API. Defaults to English.
+#' @param ip String. Either an IPv4 address, IPv6 address or a domain name. If NULL, will use the current IP address.
+#' @param fields String. Response fields to pass on to the API.
+#' @param lang String. Response language. An ISO 639 code supported by the API. Defaults to English.
 #' @param header Logical. Get field headers.
 #' @param ... Query parameters to pass on to the API.
-#' @param format Json, xml, csv, newline or php.
+#' @param format String. Json, xml, csv, newline or php.
 #' @return A response.
 #'
 #' @noRd
