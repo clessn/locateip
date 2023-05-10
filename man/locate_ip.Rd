@@ -15,9 +15,9 @@ locate_ip(
 \arguments{
 \item{ip}{String. Either an IPv4 address, IPv6 address or a domain name. If NULL, will use the current IP address.}
 
-\item{fields}{Response fields to pass on to the API.}
+\item{fields}{String. Response fields to pass on to the API.}
 
-\item{lang}{Response language. An ISO 639 code supported by the API. Defaults to English.}
+\item{lang}{String. Response language. An ISO 639 code supported by the API. Defaults to English.}
 
 \item{...}{Query parameters to pass on to the API.}
 
