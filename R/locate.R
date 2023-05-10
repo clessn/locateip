@@ -91,6 +91,8 @@ get_location <-
            header = "true",
            ...,
            format = "csv") {
+    lang <- match.arg(lang, c("en", "de", "es", "pt-BR", "fr", "ja", "zh-CN", "ru"))
+
     resp <- create_req(ip = ip, fields = fields, lang = lang, header = header, ..., format = format) |>
       httr2::req_perform()
 
