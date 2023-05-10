@@ -70,4 +70,5 @@ test_that("create request works", {
   expect_equal(req[["url"]],
                "http://ip-api.com/csv/132.203.167.188?fields=status%2Cmessage%2Ccountry%2Ccity&header=true")
 
+  expect_error(get_location(ip = "132.203.167.188", lang = "uk"))
 })
