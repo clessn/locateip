@@ -13,7 +13,7 @@ locate_ip(
 )
 }
 \arguments{
-\item{ip}{A single IPv4/IPv6 address or a domain name. If you don't supply a query the current IP address will be used.}
+\item{ip}{String. Either an IPv4 address, IPv6 address or a domain name. If NULL, will use the current IP address.}
 
 \item{fields}{Response fields to pass on to the API.}
 
