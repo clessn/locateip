@@ -9,7 +9,7 @@
 Download Internet Protocol (IP) address location and more from the 'ip-api' API.
 }
 \author{
-\strong{Maintainer}: Judith Bourque \email{info@clessn.ca} [copyright holder]
+\strong{Maintainer}: Judith Bourque \email{judith.bourque.2@ulaval.ca} [copyright holder]
 
 }
 \keyword{internal}
