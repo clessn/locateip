@@ -5,7 +5,7 @@
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/clessn/ipadress/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/clessn/ipadress/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/clessn/locateip/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/clessn/locateip/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
 coverage](https://codecov.io/gh/clessn/locateip/branch/main/graph/badge.svg)](https://app.codecov.io/gh/clessn/locateip?branch=main)
 <!-- badges: end -->
