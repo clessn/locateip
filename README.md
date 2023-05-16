@@ -15,6 +15,12 @@ The goal of locateip is to locate IP addresses using
 
 ## Installation
 
+For the most recent version, on CRAN:
+
+``` r
+install.packages("locateip")
+```
+
 You can install the development version of locateip from
 [GitHub](https://github.com/):
 
