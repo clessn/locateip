@@ -5,7 +5,7 @@
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/clessn/ipadress/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/clessn/ipadress/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/clessn/locateip/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/clessn/locateip/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
 coverage](https://codecov.io/gh/clessn/locateip/branch/main/graph/badge.svg)](https://app.codecov.io/gh/clessn/locateip?branch=main)
 <!-- badges: end -->
@@ -35,10 +35,10 @@ devtools::install_github("clessn/locateip")
 library(locateip)
 
 locate_ip("132.203.167.188", fields = c("status,message,country,city"))
-#> # A tibble: 1 × 4
-#>   status  message country city  
-#>   <chr>   <lgl>   <chr>   <chr> 
-#> 1 success NA      Canada  Québec
+#> # A tibble: 1 × 3
+#>   status  country city  
+#>   <chr>   <chr>   <chr> 
+#> 1 success Canada  Québec
 ```
 
 ## Usage
