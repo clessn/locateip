@@ -6,7 +6,7 @@
 \alias{locateip-package}
 \title{locateip: Locate IP Addresses with 'ip-api'}
 \description{
-Download Internet Protocol (IP) address location and more from the 'ip-api' application programming interface (API) <[https://ip-api.com/]https://ip-api.com/>. The package makes it easy to get the latitute, longitude, country, region, and organisation associated to the provided IP address. The information is conveniently returned in a rectangular format.
+Download Internet Protocol (IP) address location and more from the 'ip-api' application programming interface (API) <[https://ip-api.com/]https://ip-api.com/>. The package makes it easy to get the latitude, longitude, country, region, and organisation associated to the provided IP address. The information is conveniently returned in a rectangular format.
 }
 \author{
 \strong{Maintainer}: Judith Bourque \email{judith.bourque.2@ulaval.ca} (\href{https://orcid.org/0009-0000-3653-1530}{ORCID}) [copyright holder]
