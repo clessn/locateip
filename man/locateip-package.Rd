@@ -6,10 +6,10 @@
 \alias{locateip-package}
 \title{locateip: Locate IP Addresses with 'ip-api'}
 \description{
-Download Internet Protocol (IP) address location and more from the 'ip-api' API.
+Download Internet Protocol (IP) address location and more from the 'ip-api' API <[https://ip-api.com/]https://ip-api.com/>.
 }
 \author{
-\strong{Maintainer}: Judith Bourque \email{judith.bourque.2@ulaval.ca} [copyright holder]
+\strong{Maintainer}: Judith Bourque \email{judith.bourque.2@ulaval.ca} (\href{https://orcid.org/0009-0000-3653-1530}{ORCID}) [copyright holder]
 
 }
 \keyword{internal}
