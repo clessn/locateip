@@ -3,6 +3,8 @@ This is a resubmission. In this version I have:
 
 * Corrected a misspelled words in DESCRIPTION.
 
+* Put the link in angle brackets in DESCRIPTION.
+
 ## R CMD check results
 
 0 errors | 0 warnings | 1 note
