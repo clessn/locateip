@@ -1,9 +1,9 @@
 ## Resubmission
 This is a resubmission. In this version I have:
 
-* Added a web reference for the API in the description of the DESCRIPTION file.
+* Corrected a misspelled words in DESCRIPTION.
 
-* Add more details on package functionality and methods in the DESCRIPTION file.
+* Put the link in angle brackets in DESCRIPTION.
 
 ## R CMD check results
 
