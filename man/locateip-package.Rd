@@ -8,6 +8,14 @@
 \description{
 Download Internet Protocol (IP) address location and more from the 'ip-api' application programming interface (API) \url{https://ip-api.com/}. The package makes it easy to get the latitude, longitude, country, region, and organisation associated to the provided IP address. The information is conveniently returned in a rectangular format.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/clessn/locateip}
+  \item Report bugs at \url{https://github.com/clessn/locateip/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Judith Bourque \email{judith.bourque.2@ulaval.ca} (\href{https://orcid.org/0009-0000-3653-1530}{ORCID}) [copyright holder]
 
