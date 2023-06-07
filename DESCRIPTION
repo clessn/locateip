@@ -6,6 +6,8 @@ Authors@R:
            comment = c(ORCID = "0009-0000-3653-1530"))
 Description: Download Internet Protocol (IP) address location and more from the 'ip-api' application programming interface (API) <https://ip-api.com/>. The package makes it easy to get the latitude, longitude, country, region, and organisation associated to the provided IP address. The information is conveniently returned in a rectangular format.
 License: MIT + file LICENSE
+URL: https://github.com/clessn/locateip
+BugReports: https://github.com/clessn/locateip/issues
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
