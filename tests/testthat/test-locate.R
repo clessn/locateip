@@ -71,4 +71,7 @@ test_that("create request works", {
                "http://ip-api.com/csv/132.203.167.188?fields=status%2Cmessage%2Ccountry%2Ccity&header=true")
 
   expect_error(get_location(ip = "132.203.167.188", lang = "uk"))
+
+  req <- create_req()
+  expect_equal(environment(req[["policies"]][["throttle_delay"]])[["rate"]], 0.75)
 })
