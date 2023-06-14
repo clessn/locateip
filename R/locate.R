@@ -64,7 +64,7 @@ create_req <-
     req <- req |>
       httr2::req_url_query(!!!params) |>
       httr2::req_user_agent("locateip (https://github.com/clessn; info@clessn.ca)") |>
-      httr2::req_throttle(30 / 60)
+      httr2::req_throttle(40 / 60)
 
     return(req)
   }
