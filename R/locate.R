@@ -64,7 +64,10 @@ create_req <-
     req <- req |>
       httr2::req_url_query(!!!params) |>
       httr2::req_user_agent("locateip (https://github.com/clessn; info@clessn.ca)") |>
-      httr2::req_throttle(45 / 60)
+      httr2::req_throttle(45 / 60) |>
+      httr2::req_retry(max_tries = 3,
+                       is_transient = ~ httr2::resp_status(.x) %in% c(429, 503),
+                       backoff = ~ 60)
 
     return(req)
   }
