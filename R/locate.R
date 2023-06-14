@@ -96,6 +96,7 @@ get_location <-
     resp <- create_req(ip = ip, fields = fields, lang = lang, header = header, ..., format = format) |>
       httr2::req_perform()
 
+    # If there's no remaining requests, pause execution
     if (httr2::resp_header(resp, "X-Rl") == 0) {
       Sys.sleep(httr2::resp_header(resp, "X-Ttl"))
     }
