@@ -98,7 +98,7 @@ get_location <-
 
     # If there's no remaining requests, pause execution
     if (as.numeric(httr2::resp_header(resp, "X-Rl")) == 0) {
-      Sys.sleep(as.numeric(httr2::resp_header(resp, "X-Ttl")) + 5)
+      Sys.sleep(as.numeric(httr2::resp_header(resp, "X-Ttl")))
     }
 
     return(resp)
