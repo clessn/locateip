@@ -72,3 +72,12 @@ test_that("create request works", {
 
   expect_error(get_location(ip = "132.203.167.188", lang = "uk"))
 })
+
+test_that("locate_ips() works", {
+  output <- tibble::tibble(status = c("success", "success"),
+                   country = c("Canada", "United States"),
+                   city = c("Québec", "Ashburn"),
+                   message = c(NA, NA))
+
+  expect_equal(locate_ips(c("132.203.167.188", "8.8.8.8")), output)
+})

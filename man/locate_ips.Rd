@@ -12,13 +12,13 @@ locate_ips(
 )
 }
 \arguments{
+\item{ips}{Character vector of either an IPv4 address, IPv6 address.}
+
 \item{fields}{String. Response fields to pass on to the API.}
 
 \item{lang}{String. Response language. An ISO 639 code supported by the API. Defaults to English.}
 
 \item{tidy}{Logical. TRUE to return a tibble. FALSE to return a list.}
-
-\item{ip}{Character vector of either an IPv4 address, IPv6 address.}
 }
 \value{
 A list or tibble
@@ -30,5 +30,5 @@ A list or tibble
 For API documentation and terms of service, see \href{https://ip-api.com/}{ip-api.com}.
 }
 \examples{
-locate_ips(c("132.203.167.188", "8.8.8.8", "208.80.152.201")
+locate_ips(c("132.203.167.188", "8.8.8.8", "208.80.152.201"))
 }

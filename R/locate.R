@@ -126,14 +126,14 @@ tidy_resp <- function(response = NULL) {
 #'
 #' For API documentation and terms of service, see [ip-api.com](https://ip-api.com/).
 #'
-#' @param ip Character vector of either an IPv4 address, IPv6 address.
+#' @param ips Character vector of either an IPv4 address, IPv6 address.
 #' @param fields String. Response fields to pass on to the API.
 #' @param lang String. Response language. An ISO 639 code supported by the API. Defaults to English.
 #' @param tidy Logical. TRUE to return a tibble. FALSE to return a list.
 #' @return A list or tibble
 #' @export
 #' @examples
-#' locate_ips(c("132.203.167.188", "8.8.8.8", "208.80.152.201")
+#' locate_ips(c("132.203.167.188", "8.8.8.8", "208.80.152.201"))
 locate_ips <- function(ips = NULL,
                        fields = c("status,message,country,city"),
                        lang = "en",
@@ -149,7 +149,8 @@ locate_ips <- function(ips = NULL,
            })
 
   if(tidy){
-    do.call(rbind, responses)
+    do.call(rbind, responses) |>
+      as_tibble()
   } else unlist(responses, recursive = FALSE)
 
 }
@@ -177,7 +178,7 @@ batch_request <- function(ips = NULL, fields, lang, tidy){
 
   resp <- httr2::req_perform(req)
 
-  json_body <- resp_body_json(resp)
+  json_body <- httr2::resp_body_json(resp)
 
   if(tidy){
     lapply(json_body, tibble::as_tibble) |>
@@ -186,7 +187,8 @@ batch_request <- function(ips = NULL, fields, lang, tidy){
         x[fields_vec[!fields_vec %in% names(x)]] <- NA
         x
       }) |>
-      do.call(rbind, args = _)
+      do.call(rbind, args = _) |>
+      tibble::as_tibble()
   } else {
     json_body
   }
